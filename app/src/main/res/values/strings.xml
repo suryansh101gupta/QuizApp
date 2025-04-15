@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="welcome_to_the_app">Welcome to the app</string>
+    <string name="please_enter_your_name">Please enter your name</string>
+    <string name="name">Name</string>
+    <string name="start">START</string>
+    <string name="image_flag">image flag</string>
+    <string name="check">CHECK</string>
+    <string name="result">Result</string>
+    <string name="image">Image</string>
+    <string name="hello_congratulations">Hello! Congratulations</string>
+    <string name="hello_low">Hey Sorry :(</string>
+    <string name="exit">HOME</string>
+    <string name="your_score_is">Your score for this session is</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="click_to_login">Already an user? Login Now!</string>
+    <string name="click_to_register">New to the app? Create an account </string>
+    <string name="logout">Logout</string>
+    <string name="show">Show All Attempts</string>
+</resources>
