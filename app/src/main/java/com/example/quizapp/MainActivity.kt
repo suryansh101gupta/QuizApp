@@ -62,14 +62,20 @@ class MainActivity : AppCompatActivity() {
                 }
         }
 
-        user = auth.currentUser!!
-        if(user == null){
-            Intent(applicationContext, Login::class.java).also{
-                startActivity(it)
-                finish()
-            }
-        }else{
-            textView.text = user.email
+//        user = auth.currentUser!!
+//        if(user == null){
+//            Intent(applicationContext, Login::class.java).also{
+//                startActivity(it)
+//                finish()
+//            }
+//        }else{
+//            textView.text = user.email
+//        }
+
+        user = auth.currentUser ?: run {
+            startActivity(Intent(this, Login::class.java))
+            finish()
+            return
         }
 
         button.setOnClickListener(){

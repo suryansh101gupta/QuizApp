@@ -1,6 +1,8 @@
 package com.example.quizapp
 
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -15,6 +17,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.quizapp.ui.QuestionsActivity
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 
 class Login : AppCompatActivity() {
@@ -47,6 +50,26 @@ class Login : AppCompatActivity() {
             insets
         }
 
+        val forgotPassword = findViewById<TextView>(R.id.forgotPassword)
+
+        forgotPassword.setOnClickListener {
+            val email = editTextEmail.text.toString().trim()
+
+            if (email.isEmpty()) {
+                Toast.makeText(this, "Enter your email first", Toast.LENGTH_SHORT).show()
+            } else {
+                auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Reset email sent. Check your inbox.", Toast.LENGTH_LONG).show()
+                        } else {
+                            Toast.makeText(this, "Error: " + task.exception?.message, Toast.LENGTH_LONG).show()
+                        }
+                    }
+            }
+        }
+
+
         auth = FirebaseAuth.getInstance()
 
         editTextEmail = findViewById(R.id.email)
@@ -54,6 +77,13 @@ class Login : AppCompatActivity() {
         buttonLog = findViewById(R.id.btn_login)
         progressBar = findViewById(R.id.progress_bar)
         textView = findViewById(R.id.registernow)
+
+        val layout = findViewById<TextInputLayout>(R.id.emaillayout)
+        layout.defaultHintTextColor = ColorStateList.valueOf(Color.BLACK)
+
+        val layout2 = findViewById<TextInputLayout>(R.id.passwordlayout)
+        layout2.defaultHintTextColor = ColorStateList.valueOf(Color.BLACK)
+
 
         textView.setOnClickListener(){
             Intent(this, Register::class.java).also{

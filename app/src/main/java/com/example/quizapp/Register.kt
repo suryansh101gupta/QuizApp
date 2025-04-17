@@ -20,11 +20,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import android.app.Activity
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.net.Uri
 import android.provider.MediaStore
 import android.widget.ImageView
 import com.bumptech.glide.Glide
+import com.google.android.material.textfield.TextInputLayout
 import java.util.UUID
 
 
@@ -85,6 +88,15 @@ class Register : AppCompatActivity() {
         buttonReg = findViewById(R.id.btn_register)
         progressBar = findViewById(R.id.progress_bar)
         textView = findViewById(R.id.loginnow)
+
+        val layout = findViewById<TextInputLayout>(R.id.emaillayout)
+        layout.defaultHintTextColor = ColorStateList.valueOf(Color.BLACK)
+
+        val layout2 = findViewById<TextInputLayout>(R.id.passwordlayout)
+        layout2.defaultHintTextColor = ColorStateList.valueOf(Color.BLACK)
+
+        val layout3 = findViewById<TextInputLayout>(R.id.namelayout)
+        layout3.defaultHintTextColor = ColorStateList.valueOf(Color.BLACK)
 
         profileImageView = findViewById(R.id.profile_image)
 
