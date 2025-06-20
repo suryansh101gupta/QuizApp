@@ -1,94 +1,113 @@
 # QuizApp
 
-A modern, interactive quiz application built with a focus on usability, flexibility, and scalability. QuizApp lets users create, manage, and participate in quizzes on any topic, supporting a wide range of question formats and customizable options. Perfect for educators, trainers, students, or anyone who loves to challenge their knowledge!
+QuizApp is a native Android application developed in Kotlin that allows users to take quizzes, track their scores, and manage their user profiles with modern cloud-backed features.
 
-## 🚀 Features
+## 🏗️ Project Overview
 
-- **User Authentication**: Sign up, log in, and personalize your experience.
-- **Quiz Creation**: Easily create quizzes with multiple question types (multiple choice, true/false, short answer, etc.).
-- **Question Management**: Add, edit, and remove questions with rich formatting.
-- **Timer & Scoring**: Built-in timer and instant scoring for competitive play.
-- **Leaderboard**: Track top performers and foster friendly competition.
-- **Responsive Design**: Works seamlessly across desktops, tablets, and mobiles.
-- **Results & Analytics**: Detailed results with performance analytics for users and creators.
-- **Customizable Themes**: Personalize the look and feel of your quizzes.
-- **Admin Panel**: Manage users, quizzes, and monitor platform activity (for administrators).
-
-## 🖥️ Screenshots
-
-<!-- Replace these with your app screenshots -->
-![Home Screen](images/home.png)
-![Quiz Interface](images/quiz.png)
-![Leaderboard](images/leaderboard.png)
-
-## 📦 Tech Stack
-
-- **Frontend:** React.js / Vue.js / Angular (choose your framework)
-- **Backend:** Node.js + Express / Django / Flask (choose your backend)
-- **Database:** MongoDB / PostgreSQL / MySQL (choose your DB)
-- **Authentication:** JWT / OAuth
-- **Styling:** Tailwind CSS / Bootstrap / Material UI
-- **Deployment:** Vercel / Netlify / Heroku / AWS
-
-> _Note: Update the above stack to match your implementation._
-
-## 🛠️ Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/suryansh101gupta/QuizApp.git
-   cd QuizApp
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Configure environment variables:**
-   - Copy `.env.example` to `.env` and add your config values.
-
-4. **Run the application:**
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
-
-5. **Open in browser:**
-   ```
-   http://localhost:3000
-   ```
-
-## 🧑‍💻 Usage
-
-- **Create Account:** Register and log in to start using QuizApp.
-- **Create Quiz:** Navigate to the dashboard and select "Create Quiz."
-- **Participate:** Join available quizzes, answer questions, and see instant results.
-- **Track Progress:** Visit your profile or the leaderboard for stats and analytics.
-
-## 🤝 Contributing
-
-Contributions are welcome! Here’s how you can help:
-
-1. Fork the repo
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## 🙋‍♂️ Contact
-
-Made with ❤️ by [Suryansh Gupta](https://github.com/suryansh101gupta)
+This app offers a seamless quiz experience with user authentication, profile management, score history, and profile picture support using Firebase services. Glide is used for smooth image loading in the app.
 
 ---
 
-> _Star this repository if you found it useful!_
+## ✨ Features
+
+- **User Authentication:** Secure login and registration using Firebase Authentication.
+- **User Profiles:** Store, update, and display user profiles, including name, email, and profile picture.
+- **Profile Picture Upload:** Upload and fetch profile pictures using Firebase Cloud Storage and display them with Glide by Bumptech.
+- **Quiz System:** Take interactive quizzes, see your score, and view your quiz history.
+- **Score History:** All quiz scores are saved to Firebase Firestore for persistent history.
+- **Modern Android UI:** Clean, responsive layouts built with Android Studio and Kotlin.
+- **Firebase Integration:** Authentication, Firestore, and Storage are managed through Gradle dependencies.
+
+---
+
+## 📲 Screenshots
+
+<!-- Replace with your actual screenshots -->
+![Login Screen](images/login.png)
+![Quiz Screen](images/quiz.png)
+![Profile Screen](images/profile.png)
+
+---
+
+## 🔧 Tech Stack
+
+- **Language:** Kotlin
+- **IDE:** Android Studio
+- **Backend & Storage:** Firebase Authentication, Firebase Firestore, Firebase Cloud Storage
+- **Image Loading:** Glide (by Bumptech)
+- **Build Tool:** Gradle
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/suryansh101gupta/QuizApp.git
+cd QuizApp
+```
+
+### 2. Open in Android Studio
+
+- Open Android Studio.
+- Choose **Open an existing project** and select the cloned folder.
+
+### 3. Configure Firebase
+
+- Add your `google-services.json` file in the `app/` directory for Firebase configuration.
+- Ensure Firebase Authentication, Firestore, and Cloud Storage are enabled in your Firebase Console.
+
+### 4. Gradle Dependencies
+
+Make sure your `app/build.gradle` includes the following:
+
+```gradle
+// Firebase
+implementation 'com.google.firebase:firebase-auth:XX.X.X'
+implementation 'com.google.firebase:firebase-firestore:XX.X.X'
+implementation 'com.google.firebase:firebase-storage:XX.X.X'
+
+// Glide for image loading
+implementation 'com.github.bumptech.glide:glide:4.12.0'
+kapt 'com.github.bumptech.glide:compiler:4.12.0'
+```
+> Replace `XX.X.X` with the latest versions compatible with your project.
+
+- Sync your Gradle project after adding/updating dependencies.
+
+### 5. Run the App
+
+- Connect your Android device or use an emulator.
+- Click **Run** in Android Studio.
+
+---
+
+## 🧑‍💻 Usage
+
+- **Register/Login:** Create a new account or login with existing credentials.
+- **Set Profile:** Upload a profile picture and personalize your account.
+- **Take Quizzes:** Select a quiz, answer questions, and submit to see your score.
+- **View Score History:** Check your past quiz scores in your profile.
+
+---
+
+## 📝 Contributing
+
+Contributions are welcome! Please fork the repo and submit a pull request for review.
+
+---
+
+## 🪪 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙋 Author
+
+Developed by [Suryansh Gupta](https://github.com/suryansh101gupta)
+
+---
+
+_Star ⭐ this repository if you found it useful!_
